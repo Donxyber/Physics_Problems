@@ -371,7 +371,6 @@ Those are not the same thing.
 If asked whether “the paths intersect” means collision, answer: no. A collision requires both the same point and the same time. Here, the geometric paths intersect, but Alice and Bob reach that point at different times.
 
 
-
 ## 4. Vector Calculus
 
 The position of an object is given by $\vec{r}(t) = (3t^2)\hat{i} + (5t - 8t^2)\hat{j}$. Find the object's velocity and acceleration vectors as a function of time.
@@ -442,6 +441,98 @@ If asked why velocity is obtained by differentiation, explain that velocity is t
 ## 5. Relative Velocity
 
 A river flows east at $2 \text{m/s}$. A boat that can travel at $5 \text{m/s}$ in still water wants to go directly north across the river. In what direction (angle) should it head? How long will it take to cross the river if it's 200 meters wide?
+
+
+### Prepared presentation solution
+
+#### Given
+- The river flows east at:
+\[
+2\ \text{m/s}
+\]
+- The boat's speed in still water is:
+\[
+5\ \text{m/s}
+\]
+- The river is:
+\[
+200\ \text{m}
+\]
+wide.
+
+The boat wants to travel directly north across the river.
+
+#### Step 1: Choose the direction of the boat
+Let the boat head at an angle \(\alpha\) west of north.
+
+Its velocity relative to the water has magnitude:
+\[
+5\ \text{m/s}
+\]
+
+To go directly north, the westward component of the boat's velocity must exactly cancel the eastward river flow.
+
+So:
+\[
+5\sin\alpha=2
+\]
+
+Hence:
+\[
+\sin\alpha=\frac{2}{5}
+\]
+
+Therefore:
+\[
+\alpha=\arcsin\left(\frac{2}{5}\right)\approx 23.58^\circ
+\]
+
+#### Direction
+The boat must head:
+\[
+\boxed{23.58^\circ\ \text{west of north}}
+\]
+
+#### Step 2: Find the northward velocity
+The northward component is:
+\[
+v_N=5\cos\alpha
+\]
+
+Using:
+\[
+\cos\alpha=\sqrt{1-\sin^2\alpha}
+=\sqrt{1-\left(\frac{2}{5}\right)^2}
+=\sqrt{\frac{21}{25}}
+=\frac{\sqrt{21}}{5}
+\]
+
+So:
+\[
+v_N=5\cdot \frac{\sqrt{21}}{5}=\sqrt{21}\approx 4.58\ \text{m/s}
+\]
+
+#### Step 3: Crossing time
+Time is distance divided by northward speed:
+\[
+t=\frac{200}{\sqrt{21}}\approx 43.6\ \text{s}
+\]
+
+#### Final answer
+\[
+\boxed{\text{Direction: }23.58^\circ\ \text{west of north}}
+\]
+\[
+\boxed{t\approx 43.6\ \text{s}}
+\]
+
+#### Interpretation
+The boat does not point directly north.  
+It must aim slightly upstream so that the river's eastward current is canceled.
+
+#### Oral defense note
+If asked why the boat must aim west of north, explain that the river pushes it east, so the boat must generate a westward component to compensate.
+
 
 ## 6. Variable Velocity
 
