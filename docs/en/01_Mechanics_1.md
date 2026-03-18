@@ -23,9 +23,10 @@ A projectile is fired from the ground with an initial velocity of $100  \text{ m
 
 #### Differential equations of motion
 In the horizontal direction:
-\[
+
+$$
 m\ddot{x} = 0 \quad \Rightarrow \quad \ddot{x} = 0
-\]
+$$
 
 In the vertical direction:
 \[
@@ -59,7 +60,7 @@ y(t)=v_0\sin\theta \, t - \frac{1}{2}gt^2
 These are the equations of projectile motion.
 
 #### Time of flight
-The projectile returns to the ground when \(y(T)=0\):
+The projectile returns to the ground when $y(T)=0$:
 \[
 v_0\sin\theta \, T - \frac{1}{2}gT^2 = 0
 \]
