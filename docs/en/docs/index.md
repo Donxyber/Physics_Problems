@@ -1,0 +1,1250 @@
+# Section 1: Mechanics I
+
+## 1. Projectile Motion
+
+A projectile is fired from the ground with an initial velocity of $100\ \text{m/s}$ at an angle of $37^\circ$ above the horizontal. Assume no air resistance.
+
+- Derive the differential equations of motion in the horizontal and vertical directions.
+- Determine the time of flight.
+- Determine the maximum height.
+- Determine the range.
+
+### Prepared presentation solution
+
+#### Model and assumptions
+- Motion takes place in two dimensions: horizontal $x$ and vertical $y$.
+- Air resistance is neglected.
+- The only force acting on the projectile after launch is gravity.
+- Therefore, horizontal acceleration is zero and vertical acceleration is constant and equal to $-g$.
+
+#### Differential equations of motion
+
+In the horizontal direction:
+
+$$
+m\ddot{x} = 0 \quad \Rightarrow \quad \ddot{x} = 0
+$$
+
+In the vertical direction:
+
+$$
+m\ddot{y} = -mg \quad \Rightarrow \quad \ddot{y} = -g
+$$
+
+With the initial conditions:
+
+$$
+x(0)=0, \qquad y(0)=0
+$$
+
+$$
+\dot{x}(0)=v_0\cos\theta, \qquad \dot{y}(0)=v_0\sin\theta
+$$
+
+where:
+
+$$
+v_0 = 100\ \text{m/s}, \qquad \theta = 37^\circ
+$$
+
+#### Position as a function of time
+
+Integrating the horizontal equation:
+
+$$
+x(t)=v_0\cos\theta \, t
+$$
+
+Integrating the vertical equation:
+
+$$
+y(t)=v_0\sin\theta \, t - \frac{1}{2}gt^2
+$$
+
+These are the equations of projectile motion.
+
+#### Time of flight
+
+The projectile returns to the ground when $y(T)=0$:
+
+$$
+v_0\sin\theta \, T - \frac{1}{2}gT^2 = 0
+$$
+
+Factor out $T$:
+
+$$
+T\left(v_0\sin\theta - \frac{1}{2}gT\right)=0
+$$
+
+Ignoring the trivial solution $T=0$, we obtain:
+
+$$
+T=\frac{2v_0\sin\theta}{g}
+$$
+
+Substituting the numerical values:
+
+$$
+T=\frac{2\cdot 100 \cdot \sin 37^\circ}{9.81}\approx 12.27\ \text{s}
+$$
+
+#### Maximum height
+
+The maximum height occurs when the vertical velocity is zero:
+
+$$
+\dot{y}(t)=v_0\sin\theta - gt
+$$
+
+Set $\dot{y}(t)=0$:
+
+$$
+t_H=\frac{v_0\sin\theta}{g}
+$$
+
+Now substitute this into $y(t)$:
+
+$$
+H_{\max}=\frac{v_0^2\sin^2\theta}{2g}
+$$
+
+Numerically:
+
+$$
+H_{\max}=\frac{100^2\sin^2 37^\circ}{2\cdot 9.81}\approx 181.0\ \text{m}
+$$
+
+#### Range
+
+The range is the horizontal distance traveled during the full time of flight:
+
+$$
+R=x(T)=v_0\cos\theta \cdot T
+$$
+
+Substitute the expression for $T$:
+
+$$
+R=v_0\cos\theta \cdot \frac{2v_0\sin\theta}{g}
+$$
+
+Using the identity $2\sin\theta\cos\theta=\sin 2\theta$:
+
+$$
+R=\frac{v_0^2\sin(2\theta)}{g}
+$$
+
+Numerically:
+
+$$
+R=\frac{100^2\sin 74^\circ}{9.81}\approx 979.9\ \text{m}
+$$
+
+#### Final answers
+
+$$
+\boxed{T \approx 12.27\ \text{s}}
+$$
+
+$$
+\boxed{H_{\max} \approx 181.0\ \text{m}}
+$$
+
+$$
+\boxed{R \approx 979.9\ \text{m}}
+$$
+
+#### Interpretation
+- The horizontal motion is uniform because there is no horizontal force.
+- The vertical motion is uniformly accelerated because gravity acts downward with constant acceleration.
+- The trajectory is a parabola.
+
+#### Oral defense note
+If asked why the horizontal acceleration is zero, explain that no horizontal force acts on the projectile once it leaves the launcher.  
+If asked why the vertical acceleration is negative, explain that the positive $y$-direction is upward, while gravity acts downward.
+
+---
+
+## 2. Range Optimization
+
+For projectile motion, show analytically that the maximum range $R(\theta)=\frac{v_0^2\sin(2\theta)}{g}$ for a given initial velocity is achieved at a launch angle of $45^\circ$.
+
+### Prepared presentation solution
+
+#### Goal
+We want to show analytically that for projectile motion, the maximum range for a given initial speed is obtained at a launch angle of $45^\circ$.
+
+#### Starting formula
+
+For projectile motion without air resistance, the range is:
+
+$$
+R=\frac{v_0^2\sin(2\theta)}{g}
+$$
+
+where:
+- $v_0$ is the initial velocity,
+- $\theta$ is the launch angle,
+- $g$ is the gravitational acceleration.
+
+#### Optimization
+
+For fixed $v_0$ and $g$, the only variable is:
+
+$$
+\sin(2\theta)
+$$
+
+The sine function satisfies:
+
+$$
+-1 \leq \sin(2\theta) \leq 1
+$$
+
+Therefore, the maximum possible value of the range is obtained when:
+
+$$
+\sin(2\theta)=1
+$$
+
+This occurs when:
+
+$$
+2\theta=90^\circ
+$$
+
+Hence:
+
+$$
+\theta=45^\circ
+$$
+
+#### Maximum range
+
+Substituting $\sin(2\theta)=1$ into the range formula:
+
+$$
+R_{\max}=\frac{v_0^2}{g}
+$$
+
+#### Final answer
+
+$$
+\boxed{\theta=45^\circ}
+$$
+
+$$
+\boxed{R_{\max}=\frac{v_0^2}{g}}
+$$
+
+#### Interpretation
+The range depends on both the horizontal and vertical components of the initial velocity.  
+At $45^\circ$, these components are balanced in the way that maximizes the horizontal distance traveled.
+
+#### Oral defense note
+If asked why $45^\circ$ is optimal, explain that the range is proportional to $\sin(2\theta)$, and sine reaches its maximum value of 1 at $90^\circ$, so $2\theta=90^\circ$, hence $\theta=45^\circ$.
+
+---
+
+## 3. Path Intersection
+
+Alice is moving along a path described by $A(t) = (2+t,\, 8-3t)$ and Bob is moving along a path $B(t) = (2t-1,\, 2t+2)$. Determine if their paths intersect. If yes, determine when and where they will collide. If not, determine the minimum distance between them and when it occurs.
+
+### Prepared presentation solution
+
+#### Given paths
+
+Alice moves along:
+
+$$
+A(t)=(2+t,\ 8-3t)
+$$
+
+Bob moves along:
+
+$$
+B(t)=(2t-1,\ 2t+2)
+$$
+
+We must determine:
+- whether they collide,
+- if not, whether their paths intersect geometrically,
+- and the minimum distance between them.
+
+#### Step 1: Check whether they collide at the same time
+
+For a collision, both coordinates must be equal for the same value of $t$:
+
+$$
+2+t=2t-1
+$$
+
+$$
+8-3t=2t+2
+$$
+
+From the first equation:
+
+$$
+t=3
+$$
+
+From the second equation:
+
+$$
+6=5t
+\Rightarrow
+t=\frac{6}{5}
+$$
+
+These values are not equal, so there is no single time $t$ for which both coordinates match.
+
+#### Conclusion about collision
+
+They do **not** collide.
+
+#### Step 2: Check whether the paths intersect geometrically
+
+Now allow different parameters $t_A$ and $t_B$:
+
+$$
+2+t_A=2t_B-1
+$$
+
+$$
+8-3t_A=2t_B+2
+$$
+
+From the first equation:
+
+$$
+t_A=2t_B-3
+$$
+
+Substitute into the second:
+
+$$
+8-3(2t_B-3)=2t_B+2
+$$
+
+$$
+8-6t_B+9=2t_B+2
+$$
+
+$$
+15=8t_B
+\Rightarrow
+t_B=\frac{15}{8}
+$$
+
+Then:
+
+$$
+t_A=2\cdot \frac{15}{8}-3=\frac{3}{4}
+$$
+
+Substitute into Alice’s path:
+
+$$
+A\left(\frac{3}{4}\right)=\left(2+\frac{3}{4},\ 8-3\cdot\frac{3}{4}\right)
+=\left(\frac{11}{4},\ \frac{23}{4}\right)
+$$
+
+#### Geometric intersection point
+
+The two paths intersect geometrically at:
+
+$$
+\left(\frac{11}{4},\ \frac{23}{4}\right)
+$$
+
+#### Step 3: Minimum distance between them at the same time
+
+Distance squared:
+
+$$
+D^2(t)=\left[(2+t)-(2t-1)\right]^2+\left[(8-3t)-(2t+2)\right]^2
+$$
+
+Simplify:
+
+$$
+D^2(t)=(3-t)^2+(6-5t)^2
+$$
+
+$$
+D^2(t)=26t^2-66t+45
+$$
+
+To minimize distance, differentiate:
+
+$$
+\frac{d}{dt}D^2(t)=52t-66
+$$
+
+Set equal to zero:
+
+$$
+52t-66=0
+\Rightarrow
+t=\frac{33}{26}
+$$
+
+Now compute the minimum distance:
+
+$$
+D_{\min}^2=26\left(\frac{33}{26}\right)^2-66\left(\frac{33}{26}\right)+45
+=\frac{81}{26}
+$$
+
+Thus:
+
+$$
+D_{\min}=\frac{9}{\sqrt{26}}\approx 1.765
+$$
+
+#### Final answer
+- The paths intersect geometrically.
+- They do **not** collide at the same time.
+- The geometric intersection point is:
+
+$$
+\boxed{\left(\frac{11}{4},\ \frac{23}{4}\right)}
+$$
+
+- The minimum distance is:
+
+$$
+\boxed{D_{\min}=\frac{9}{\sqrt{26}}\approx 1.765}
+$$
+
+- It occurs at:
+
+$$
+\boxed{t=\frac{33}{26}\approx 1.269}
+$$
+
+#### Interpretation
+This problem distinguishes between:
+- two trajectories crossing in space,
+- and two objects arriving at the same point at the same time.
+
+Those are not the same thing.
+
+#### Oral defense note
+If asked whether “the paths intersect” means collision, answer: no. A collision requires both the same point and the same time. Here, the geometric paths intersect, but Alice and Bob reach that point at different times.
+
+---
+
+## 4. Vector Calculus
+
+The position of an object is given by $\vec{r}(t) = (3t^2)\hat{i} + (5t - 8t^2)\hat{j}$. Find the object's velocity and acceleration vectors as a function of time.
+
+### Prepared presentation solution
+
+#### Given position vector
+
+$$
+\vec r(t)=(3t^2)\hat i+(5t-8t^2)\hat j
+$$
+
+We must find the velocity and acceleration vectors.
+
+#### Velocity vector
+
+Velocity is the derivative of position:
+
+$$
+\vec v(t)=\frac{d\vec r}{dt}
+$$
+
+Differentiate each component:
+
+$$
+\frac{d}{dt}(3t^2)=6t
+$$
+
+$$
+\frac{d}{dt}(5t-8t^2)=5-16t
+$$
+
+Therefore:
+
+$$
+\vec v(t)=6t\,\hat i+(5-16t)\,\hat j
+$$
+
+#### Acceleration vector
+
+Acceleration is the derivative of velocity:
+
+$$
+\vec a(t)=\frac{d\vec v}{dt}
+$$
+
+Differentiate again:
+
+$$
+\frac{d}{dt}(6t)=6
+$$
+
+$$
+\frac{d}{dt}(5-16t)=-16
+$$
+
+So:
+
+$$
+\vec a(t)=6\,\hat i-16\,\hat j
+$$
+
+#### Final answer
+
+$$
+\boxed{\vec v(t)=6t\,\hat i+(5-16t)\,\hat j}
+$$
+
+$$
+\boxed{\vec a(t)=6\,\hat i-16\,\hat j}
+$$
+
+#### Interpretation
+The acceleration is constant because both components of the acceleration vector are constant numbers.
+
+#### Oral defense note
+If asked why velocity is obtained by differentiation, explain that velocity is the rate of change of position with respect to time, and acceleration is the rate of change of velocity.
+
+---
+
+## 5. Relative Velocity
+
+A river flows east at $2\ \text{m/s}$. A boat that can travel at $5\ \text{m/s}$ in still water wants to go directly north across the river. In what direction (angle) should it head? How long will it take to cross the river if it's 200 meters wide?
+
+### Prepared presentation solution
+
+#### Given
+- The river flows east at:
+
+$$
+2\ \text{m/s}
+$$
+
+- The boat's speed in still water is:
+
+$$
+5\ \text{m/s}
+$$
+
+- The river is:
+
+$$
+200\ \text{m}
+$$
+
+wide.
+
+The boat wants to travel directly north across the river.
+
+#### Step 1: Choose the direction of the boat
+
+Let the boat head at an angle $\alpha$ west of north.
+
+Its velocity relative to the water has magnitude:
+
+$$
+5\ \text{m/s}
+$$
+
+To go directly north, the westward component of the boat's velocity must exactly cancel the eastward river flow.
+
+So:
+
+$$
+5\sin\alpha=2
+$$
+
+Hence:
+
+$$
+\sin\alpha=\frac{2}{5}
+$$
+
+Therefore:
+
+$$
+\alpha=\arcsin\left(\frac{2}{5}\right)\approx 23.58^\circ
+$$
+
+#### Direction
+
+The boat must head:
+
+$$
+\boxed{23.58^\circ\ \text{west of north}}
+$$
+
+#### Step 2: Find the northward velocity
+
+The northward component is:
+
+$$
+v_N=5\cos\alpha
+$$
+
+Using:
+
+$$
+\cos\alpha=\sqrt{1-\sin^2\alpha}
+=\sqrt{1-\left(\frac{2}{5}\right)^2}
+=\sqrt{\frac{21}{25}}
+=\frac{\sqrt{21}}{5}
+$$
+
+So:
+
+$$
+v_N=5\cdot \frac{\sqrt{21}}{5}=\sqrt{21}\approx 4.58\ \text{m/s}
+$$
+
+#### Step 3: Crossing time
+
+Time is distance divided by northward speed:
+
+$$
+t=\frac{200}{\sqrt{21}}\approx 43.6\ \text{s}
+$$
+
+#### Final answer
+
+$$
+\boxed{\text{Direction: }23.58^\circ\ \text{west of north}}
+$$
+
+$$
+\boxed{t\approx 43.6\ \text{s}}
+$$
+
+#### Interpretation
+The boat does not point directly north.  
+It must aim slightly upstream so that the river's eastward current is canceled.
+
+#### Oral defense note
+If asked why the boat must aim west of north, explain that the river pushes it east, so the boat must generate a westward component to compensate.
+
+---
+
+## 6. Variable Velocity
+
+An object's velocity is given by $v(t) = t^2 + 2t - 5$. If the object was at $x=4$ at $t=0$, what is its position and acceleration at time $t=3$?
+
+### Prepared presentation solution
+
+#### Given
+
+The velocity is:
+
+$$
+v(t)=t^2+2t-5
+$$
+
+The initial condition is:
+
+$$
+x(0)=4
+$$
+
+We must find:
+- the position at time $t=3$,
+- the acceleration at time $t=3$.
+
+#### Step 1: Find the position function
+
+Velocity is the derivative of position:
+
+$$
+v(t)=\frac{dx}{dt}
+$$
+
+So:
+
+$$
+x(t)=\int (t^2+2t-5)\,dt
+$$
+
+Integrating:
+
+$$
+x(t)=\frac{t^3}{3}+t^2-5t+C
+$$
+
+Use the initial condition $x(0)=4$:
+
+$$
+4=C
+$$
+
+Therefore:
+
+$$
+x(t)=\frac{t^3}{3}+t^2-5t+4
+$$
+
+#### Step 2: Compute the position at $t=3$
+
+$$
+x(3)=\frac{27}{3}+9-15+4
+$$
+
+$$
+x(3)=9+9-15+4=7
+$$
+
+#### Step 3: Find the acceleration
+
+Acceleration is the derivative of velocity:
+
+$$
+a(t)=\frac{dv}{dt}
+$$
+
+Differentiate:
+
+$$
+a(t)=2t+2
+$$
+
+Now evaluate at $t=3$:
+
+$$
+a(3)=2\cdot 3+2=8
+$$
+
+#### Final answer
+
+$$
+\boxed{x(3)=7}
+$$
+
+$$
+\boxed{a(3)=8}
+$$
+
+#### Interpretation
+The position is obtained by integrating velocity, while acceleration is obtained by differentiating velocity.
+
+#### Oral defense note
+If asked why integration gives position, explain that velocity is the rate of change of position, so position is recovered by integrating velocity and using the initial condition.
+
+---
+
+## 7. Elimination of Time and Interpretation of Acceleration
+
+The path equation is given in parametric form:
+
+$$
+x(t)=2t^2, \qquad y(t)=3t^3
+$$
+
+- Eliminate the parameter $t$.
+- Draw the trajectory.
+- Calculate $\vec v(t)$, $|\vec v(t)|$, $\vec a(t)$, and $|\vec a(t)|$.
+- Is the acceleration constant?
+
+### Prepared presentation solution
+
+#### Given parametric equations
+
+$$
+x(t)=2t^2,\qquad y(t)=3t^3
+$$
+
+We must:
+- eliminate the parameter $t$,
+- describe the trajectory,
+- calculate $\vec v$, $|\vec v|$, $\vec a$, and $|\vec a|$,
+- determine whether the acceleration is constant.
+
+#### Step 1: Eliminate the parameter
+
+From:
+
+$$
+x=2t^2
+$$
+
+we obtain:
+
+$$
+t^2=\frac{x}{2}
+$$
+
+Now square the equation for $y$:
+
+$$
+y^2=(3t^3)^2=9t^6
+$$
+
+But:
+
+$$
+t^6=(t^2)^3
+$$
+
+So:
+
+$$
+y^2=9\left(\frac{x}{2}\right)^3
+$$
+
+Hence the trajectory is:
+
+$$
+\boxed{y^2=\frac{9}{8}x^3}
+$$
+
+#### Step 2: Describe the trajectory
+
+This is a semicubical parabola.
+
+If $t\ge 0$, then $x\ge 0$ and $y\ge 0$, so the motion follows the upper-right branch.
+
+#### Step 3: Velocity vector
+
+Velocity is:
+
+$$
+\vec v(t)=\left(\frac{dx}{dt},\frac{dy}{dt}\right)
+$$
+
+Differentiate:
+
+$$
+\frac{dx}{dt}=4t,\qquad \frac{dy}{dt}=9t^2
+$$
+
+Therefore:
+
+$$
+\boxed{\vec v(t)=(4t,\ 9t^2)}
+$$
+
+#### Step 4: Speed
+
+$$
+|\vec v(t)|=\sqrt{(4t)^2+(9t^2)^2}
+$$
+
+So:
+
+$$
+|\vec v(t)|=\sqrt{16t^2+81t^4}
+$$
+
+This can also be written as:
+
+$$
+\boxed{|\vec v(t)|=|t|\sqrt{16+81t^2}}
+$$
+
+If $t\ge 0$, then:
+
+$$
+|\vec v(t)|=t\sqrt{16+81t^2}
+$$
+
+#### Step 5: Acceleration vector
+
+Acceleration is:
+
+$$
+\vec a(t)=\left(\frac{d^2x}{dt^2},\frac{d^2y}{dt^2}\right)
+$$
+
+Differentiate again:
+
+$$
+\frac{d^2x}{dt^2}=4,\qquad \frac{d^2y}{dt^2}=18t
+$$
+
+Thus:
+
+$$
+\boxed{\vec a(t)=(4,\ 18t)}
+$$
+
+#### Step 6: Magnitude of acceleration
+
+$$
+|\vec a(t)|=\sqrt{4^2+(18t)^2}
+$$
+
+So:
+
+$$
+\boxed{|\vec a(t)|=\sqrt{16+324t^2}}
+$$
+
+#### Step 7: Is the acceleration constant?
+
+No.
+
+Although the $x$-component is constant, the $y$-component is:
+
+$$
+18t
+$$
+
+which depends on time.
+
+Therefore the acceleration vector changes with time.
+
+#### Final answer
+
+$$
+\boxed{y^2=\frac{9}{8}x^3}
+$$
+
+$$
+\boxed{\vec v(t)=(4t,\ 9t^2)}
+$$
+
+$$
+\boxed{|\vec v(t)|=\sqrt{16t^2+81t^4}}
+$$
+
+$$
+\boxed{\vec a(t)=(4,\ 18t)}
+$$
+
+$$
+\boxed{|\vec a(t)|=\sqrt{16+324t^2}}
+$$
+
+Acceleration is **not constant**.
+
+#### Interpretation
+The particle does not move with uniform acceleration because one component of the acceleration depends on time.
+
+#### Oral defense note
+If asked whether constant magnitude means constant acceleration, answer carefully: acceleration is a vector. Here the vector itself changes with time, so the acceleration is not constant.
+
+---
+
+## 8. Circular Motion
+
+Calculate the centripetal acceleration of a person standing on the Earth's equator. The Earth's radius is approximately 6378 km.
+
+### Prepared presentation solution
+
+#### Given
+
+The Earth's radius is approximately:
+
+$$
+R=6378\ \text{km}=6.378\times 10^6\ \text{m}
+$$
+
+We must find the centripetal acceleration of a person standing on the Earth's equator.
+
+#### Step 1: Use the formula for centripetal acceleration
+
+For circular motion:
+
+$$
+a_c=\omega^2R
+$$
+
+where $\omega$ is the angular velocity.
+
+#### Step 2: Find the angular velocity of the Earth
+
+The Earth completes one rotation in:
+
+$$
+T=24\times 3600=86400\ \text{s}
+$$
+
+Thus:
+
+$$
+\omega=\frac{2\pi}{T}
+$$
+
+#### Step 3: Substitute into the centripetal acceleration formula
+
+$$
+a_c=\left(\frac{2\pi}{T}\right)^2R
+=\frac{4\pi^2R}{T^2}
+$$
+
+Substitute the values:
+
+$$
+a_c=\frac{4\pi^2(6.378\times 10^6)}{86400^2}
+$$
+
+This gives:
+
+$$
+a_c\approx 3.37\times 10^{-2}\ \text{m/s}^2
+$$
+
+#### Final answer
+
+$$
+\boxed{a_c\approx 0.0337\ \text{m/s}^2}
+$$
+
+#### Interpretation
+This acceleration is much smaller than the gravitational acceleration:
+
+$$
+g\approx 9.81\ \text{m/s}^2
+$$
+
+So the Earth's rotation slightly affects weight, but the effect is small.
+
+#### Oral defense note
+If asked why a person standing still on Earth has centripetal acceleration, explain that “standing still” means still relative to the Earth's surface, but the person is actually moving in a circle around the Earth's axis.
+
+---
+
+## 9. Momentum Comparison
+
+Which has greater momentum: a 2-gram fly flying at $10\ \text{m/s}$ or a 60-gram tennis ball moving at $1\ \text{m/s}$?
+
+### Prepared presentation solution
+
+#### Given
+- Fly:
+
+$$
+m_1=2\ \text{g}=0.002\ \text{kg},\qquad v_1=10\ \text{m/s}
+$$
+
+- Tennis ball:
+
+$$
+m_2=60\ \text{g}=0.060\ \text{kg},\qquad v_2=1\ \text{m/s}
+$$
+
+We compare their momenta.
+
+#### Step 1: Use the momentum formula
+
+Momentum is:
+
+$$
+p=mv
+$$
+
+#### Step 2: Compute the momentum of the fly
+
+$$
+p_1=0.002\cdot 10=0.020\ \text{kg}\cdot\text{m/s}
+$$
+
+#### Step 3: Compute the momentum of the tennis ball
+
+$$
+p_2=0.060\cdot 1=0.060\ \text{kg}\cdot\text{m/s}
+$$
+
+#### Step 4: Compare
+
+$$
+0.060 > 0.020
+$$
+
+So the tennis ball has greater momentum.
+
+In fact:
+
+$$
+p_2=3p_1
+$$
+
+#### Final answer
+
+$$
+\boxed{\text{The tennis ball has greater momentum.}}
+$$
+
+#### Interpretation
+Even though the fly moves faster, the tennis ball has much greater mass, and that dominates the product $mv$.
+
+#### Oral defense note
+If asked why speed alone does not determine momentum, explain that momentum depends on both mass and velocity.
+
+---
+
+## 10. Kinematics
+
+Point $M$ moves according to the equation:
+
+$$
+\vec{r}(t) = (a \cos(\omega t),\, b \sin(\omega t),\, bt)
+$$
+
+where $a$, $b$, $\omega$ are positive constants.
+
+a) Find the equation of the point's trajectory.
+
+b) Compute the path length of the point from time $t=0$ to $t=t_0$.
+
+c) Draw the trajectory of this point using Python or interactive HTML. Discuss special cases.
+
+### Prepared presentation solution
+
+#### Given
+
+The point moves according to:
+
+$$
+\vec r(t)=\big(a\cos(\omega t),\ b\sin(\omega t),\ bt\big)
+$$
+
+where $a$, $b$, and $\omega$ are positive constants.
+
+We must:
+- find the trajectory,
+- compute the path length from $t=0$ to $t=t_0$,
+- describe the curve and discuss special cases.
+
+#### a) Equation of the trajectory
+
+The coordinates are:
+
+$$
+x=a\cos(\omega t),\qquad y=b\sin(\omega t),\qquad z=bt
+$$
+
+From the first two equations:
+
+$$
+\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2=1
+$$
+
+So the projection onto the $xy$-plane is an ellipse.
+
+Since:
+
+$$
+t=\frac{z}{b}
+$$
+
+we can substitute into the first two equations:
+
+$$
+x=a\cos\left(\frac{\omega z}{b}\right),\qquad
+y=b\sin\left(\frac{\omega z}{b}\right)
+$$
+
+Thus the trajectory is an **elliptical helix**.
+
+#### Final trajectory form
+
+$$
+\boxed{\left(\frac{x}{a}\right)^2+\left(\frac{y}{b}\right)^2=1}
+$$
+
+with
+
+$$
+\boxed{x=a\cos\left(\frac{\omega z}{b}\right),\qquad y=b\sin\left(\frac{\omega z}{b}\right)}
+$$
+
+#### b) Path length from $t=0$ to $t=t_0$
+
+The velocity vector is:
+
+$$
+\vec r\,'(t)=\big(-a\omega\sin(\omega t),\ b\omega\cos(\omega t),\ b\big)
+$$
+
+Its magnitude is:
+
+$$
+|\vec r\,'(t)|=
+\sqrt{a^2\omega^2\sin^2(\omega t)+b^2\omega^2\cos^2(\omega t)+b^2}
+$$
+
+Therefore, the arc length is:
+
+$$
+s(t_0)=\int_0^{t_0}
+\sqrt{a^2\omega^2\sin^2(\omega t)+b^2\omega^2\cos^2(\omega t)+b^2}\,dt
+$$
+
+So:
+
+$$
+\boxed{
+s(t_0)=\int_0^{t_0}
+\sqrt{a^2\omega^2\sin^2(\omega t)+b^2\omega^2\cos^2(\omega t)+b^2}\,dt
+}
+$$
+
+In the general case, this integral is not elementary.
+
+#### c) Interpretation and special cases
+
+- The motion is helical because the point rotates in the $xy$-plane while rising linearly in $z$.
+- The projection onto the $xy$-plane is an ellipse.
+- Therefore the full trajectory is an elliptical helix.
+
+##### Special case 1: $a=b$
+
+If $a=b=R$, then:
+
+$$
+x=R\cos(\omega t),\qquad y=R\sin(\omega t)
+$$
+
+The projection becomes a circle, so the trajectory is a **circular helix**.
+
+In this case:
+
+$$
+|\vec r\,'(t)|=\sqrt{R^2\omega^2+b^2}
+$$
+
+which is constant, and then:
+
+$$
+\boxed{s(t_0)=t_0\sqrt{R^2\omega^2+b^2}}
+$$
+
+##### Special case 2: $\omega\to 0$
+
+The oscillatory motion becomes very slow, so the path approaches a nearly vertical straight line.
+
+##### Special case 3: very small $b$ in the $z$-component
+
+The vertical rise per unit time becomes small, so the helix becomes more compressed.
+
+#### Example Python code for plotting
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+a = 3
+b = 2
+omega = 1.5
+t0 = 10
+
+t = np.linspace(0, t0, 1000)
+x = a * np.cos(omega * t)
+y = b * np.sin(omega * t)
+z = b * t
+
+fig = plt.figure(figsize=(8, 6))
+ax = fig.add_subplot(111, projection='3d')
+ax.plot(x, y, z)
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.set_zlabel('z')
+ax.set_title('Trajectory of M: elliptical helix')
+plt.show()
