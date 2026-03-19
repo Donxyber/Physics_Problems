@@ -74,5 +74,5 @@ $$
 The acceleration is constant because both components of the acceleration vector are constant numbers.
 
 #### Oral defense note
-If asked why velocity is obtained by differentiation, explain that velocity is the rate of change of position with respect to time, and acceleration is the rate of change of velocity.
+Why is velocity obtained by differentiation? Velocity is the rate of change of position with respect to time, and acceleration is the rate of change of velocity.
 
